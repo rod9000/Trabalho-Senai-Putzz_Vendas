@@ -26,7 +26,7 @@
                               
                             </span>
                             
-                            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: Filhadaputa@filhaputa.tomanocu">
+                            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: email@hot.exmp">
                                 <input class="input100" type="text" name="login" placeholder="Login">
                                 <span class="focus-input100"></span>
                                 <span class="symbol-input100">
