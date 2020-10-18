@@ -11,12 +11,12 @@
         <meta charset = "UTF-8"/>
         <link rel="shortcut icon" href="imagens/icomush.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
     <body>
         <header>
         </header>
         <nav>
-        <hr/>
         <div class="col-xs-8 col-xs-offset-2">
             <div class="col-xs-6 col-xs-offset-0">
             <?php

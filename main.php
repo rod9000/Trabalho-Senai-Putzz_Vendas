@@ -7,39 +7,39 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        
         <meta charset = "UTF-8"/>
-        <link rel="shortcut icon" href="imagens/icomush.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" href="imagens/icomush.ico" type="images/icons/favicon.ico"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
     <body>
-        <header>
-            
-           
+        
+        <header>          
         </header>
         <nav>
-            <hr/>
             <div class="col-xs-8 col-xs-offset-2">
                 <div class="col-xs-6 col-xs-offset-0">
                     <?php
                         include("menu.php");
                     ?>
+                  
                 </div>
                 <div class="col-xs-4 col-xs-offset-1">
                     <?php
-                        echo "<span class='glyphicon glyphicon-user' aria-hidden='true'></span>";
+                    echo "<div style='position: fixed; left:10;  qwidth: 100%;  color: white; text-align: center;'>";
+                        echo "<span class='glyphicon glyphicon-user' style='color:white' aria-hidden='true'></span>";
                         echo $_SESSION["user"];
-                        echo "<a href='sair.php' style='text-decoration: none; font-weight: bold;'>&nbsp;&nbsp;Sair</a>";
+                        echo "<a href='sair.php' style='text-decoration: none;color:#20ff28; font-weight: bold;'>&nbsp;&nbsp;Sair</a>";
+                        echo "</div>";
                     ?>
                 </div>
             </div>
         </nav>
         <section>
-            <hr/>
             <br/><br/>
         <div style="width: 30%; float:left; padding-left:2%; padding-right:2%">
         <div class="panel panel-primary">
-            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;Dados da Agenda</h3></div>
+            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;Dados do Sistema</h3></div>
                 <div class="panel-body">
                     <?php
                     include("conecta.php");
@@ -59,6 +59,16 @@
                     <?php echo "<b>".$numero['pessoas']."</b>"; ?>
                     <?php mysqli_close($conn); ?>
                     <br/>
+                    <?php
+                    include("conecta.php");
+                    $produto = mysqli_query($conn, "SELECT count(*) as produtos from produtos");
+                    $numero2 = mysqli_fetch_array($produto)
+                    ?>
+                    </br>
+                    Produtos Cadastrados 
+                    <?php echo "<b>".$numero2['produtos']."</b>"; ?>
+                    <?php mysqli_close($conn); ?>
+                    <br/>
                 </div>    
         </div>
         </div>
@@ -68,22 +78,12 @@
                 <div class="panel-body">
                     <?php
                     include("conecta.php");
-                    $juridica = mysqli_query($conn, "SELECT count(*) as juridica from pessoas");
-                    $numero = mysqli_fetch_array($juridica)
+                    $pedidos = mysqli_query($conn, "SELECT count(*) as pedidos from pedidos");
+                    $numero = mysqli_fetch_array($pedidos)
                     ?>
-                    Pessoas Jurídicas Cadastradas 
-                    <?php echo "<b>".$numero['juridica']."</b>";?>
+                    Quantidade de Pedidos Cadastrados 
+                    <?php echo "<b>".$numero['pedidos']."</b>";?>
                     <?php mysqli_close($conn); ?>
-                    <br/><br/>
-                    <?php
-                    include("conecta.php");
-                    $fisica = mysqli_query($conn, "SELECT count(*) as fisica from pessoas ");
-                    $numero = mysqli_fetch_array($fisica)
-                    ?>
-                    Pessoas Físicas Cadastradas 
-                    <?php echo "<b>".$numero['fisica']."</b>";?>
-                    <?php mysqli_close($conn); ?>
-                    <br/>
                 </div>    
         </div>
         </div>
@@ -110,8 +110,7 @@
             <br/><br/>
         </section>
         <footer>
-            <br/>
-            <hr/>
             </footer>
-    </body>
+                    </div>
+
 </html>

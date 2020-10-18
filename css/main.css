@@ -58,7 +58,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #b85346;
+  color: #ff0000;
 }
 
 /*---------------------------------------------*/
@@ -168,20 +168,13 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #9053c7;
-   background: -webkit-linear-gradient(-135deg, #c850c0, #fbff00);
-  background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
-  background: -moz-linear-gradient(-135deg, #000000, #4158d0);
-  background: linear-gradient(-135deg, #000000, rgb(0, 0, 0));
+  background: #000000;
+
 }
 
 .wrap-login100 {
   width: 960px;
-  background: #fff;
-  background: -webkit-linear-gradient(-135deg, #c850c0, #fbff00);
-  background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
-  background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-  background: linear-gradient(-135deg, #000000, #000000);
+  background: rgb(0, 0, 0);
   border-radius: 10px;
   overflow: hidden;
 
@@ -192,13 +185,13 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 100px 130px 33px 95px;
+  padding: 177px 130px 33px 95px;
 }
 
 /*------------------------------------------------------------------
 [  ]*/
 .login100-pic {
-  width: 300px;
+  width: 316px;
 }
 
 .login100-pic img {
@@ -209,7 +202,7 @@ iframe {
 /*------------------------------------------------------------------
 [  ]*/
 .login100-form {
-  width: 300px;
+  width: 290px;
 }
 
 .login100-form-title {
@@ -260,7 +253,7 @@ iframe {
   width: 100%;
   height: 100%;
   box-shadow: 0px 0px 0px 0px;
-  color: rgb(81, 255, 0);
+  color: rgb(59, 255, 24);
 }
 
 .input100:focus + .focus-input100 {
@@ -330,13 +323,13 @@ iframe {
   font-family: Montserrat-Bold;
   font-size: 15px;
   line-height: 1.5;
-  color: rgb(3, 3, 3);
+  color: #fff;
   text-transform: uppercase;
 
   width: 100%;
   height: 50px;
   border-radius: 25px;
-  background: #47fc00;
+  background: #57b846;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -353,7 +346,14 @@ iframe {
 }
 
 .login100-form-btn:hover {
-  background: #333333;
+  background: #000000;
+}
+.login100-form-btn:hover {
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgb(21, 255, 0);
+  text-transform: uppercase;
 }
 
 
@@ -463,4 +463,103 @@ iframe {
     visibility: visible;
     opacity: 1;
   }
+}
+
+.navbar {
+  background-color: rgb(0, 0, 0);
+  font-family: Arial;
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #20ff28;
+  color: rgb(0, 0, 0);
+  padding: 17px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-right:1px solid #bbb;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: rgb(0, 0, 0);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #20ff28}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  padding: 15px 16px;
+  text-decoration: none;
+}
+
+.ref-btn{
+  background-color: #20ff28;
+  color: white;
+  padding: 4px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+body {
+  background-color: rgb(255, 255, 255)
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover{
+  background-color: #3e8e41;
+}
+
+li:last-child {
+  border-right: none;
 }

@@ -11,6 +11,7 @@
         <meta charset = "UTF-8"/>
         <link rel="shortcut icon" href="imagens/icomush.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
     <body>
         <header>
@@ -42,24 +43,11 @@
             <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp;Cadastro de Produtos</h3></div>
                 <div class="panel-body">
                     <form name="cadproduto" id="cadproduto" action="cadastraproduto.php" method="post">
-                        <label>Tipo do produto</label>
-                        <select name="tipoproduto" autofocus required="required" class="form-control">
-                            <option value="Tipo">tipo...</option>
-                            <option value="Desodorante">Desodorante</option>
-                            <option value="Perfume">Perfume</option>
-                            <option value="Shampoo">Shampoo</option>
-                            <option value="Sabonete">Sabonete</option>
-                            <option value="Colonia">Colonia</option>
-                        </select>
-                        <br/>
                         <label>Código</label>
                         <input type="int" name="codigo" placeholder="Digite o código" maxlength="85" required="required" class="form-control">
                         <br/>
-                        <label>Nome</label>
-                        <input type="text" name="nome" placeholder="Digite o nome" maxlength="85" required="required" class="form-control">
-                        <br/>
-                        <label>Quantidade</label>
-                        <input type="int" name="quantidade" placeholder="Digite a quantidade" maxlength="4" required="required" class="form-control">
+                        <label>Estoque</label>
+                        <input type="int" name="estoque" placeholder="Digite o estoque" maxlength="10" required="required" class="form-control">
                         <br/>
                         <label>Descrição</label>
                         <input type="text" name="descricao" placeholder="Coloque a descrição do produto" maxlength="100" required="required" class="form-control">
