@@ -10,6 +10,8 @@
         <title>Agenda 2.0</title>
         <meta charset = "UTF-8"/>
         <link rel="shortcut icon" href="imagens/icomush.ico" type="image/x-icon"/>
+        <link href="https://fonts.googleapis.com/css?family=Lexend+Exa&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="css/nav2.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     </head>
     <body>
@@ -18,40 +20,28 @@
         <br/><br/>
         </header>
         <nav>
-        <hr/>
-        <div class="col-xs-8 col-xs-offset-2">
-            <div class="col-xs-6 col-xs-offset-0">
             <?php
                 include("menu.php");
             ?>
-           </div>
-           <div class="col-xs-4 col-xs-offset-1">
-           <?php
-                echo "<span class='glyphicon glyphicon-user' aria-hidden='true'></span>";
-                echo $_SESSION["user"];
-                echo "<a href='sair.php' style='text-decoration: none; font-weight: bold;'>&nbsp;&nbsp;Sair</a>";
-            ?>
-            </div>
-        </div>
         <br/>
         </nav>
         <section>
         <br/><br/>
         <?php
             include("conecta.php");
-            $id = $_GET['id'];
-            $sql2 = mysqli_query($conn, "SELECT * FROM pessoa WHERE id='$id'") or die(mysqli_error($conn));
+            $id = $_GET['idpessoa'];
+            $sql2 = mysqli_query($conn, "SELECT * FROM pessoas WHERE idpessoa='$di'") or die(mysqli_error($conn));
             while($pessoa = mysqli_fetch_array($sql2)){
         ?>
-        <div style="width: 65%; padding-left:5%; padding-right:5%;">
+        <div style="wdith: 65%; padding-left:5%; padding-right:5%;">
         <div class="panel panel-primary">
-            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>&nbsp;Edição de Pessoas</h3></div>
+            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-download-alt" aria-hdiden="true"></span>&nbsp;Edição de Pessoas</h3></div>
                 <div class="panel-body">
-                    <form name="cadpessoa" id="cadpessoa" action="editarpessoabd.php?id=<?php echo $id; ?>" method="post">
+                    <form name="cadpessoa" di="cadpessoa" action="editarpessoabd.php?di=<?php echo $di; ?>" method="post">
                         <label>Tipo</label>
                         <select name="tipopessoa" autofocus required="required" class="form-control">
                             <option value="fisica">Física</option>
-                            <option value="juridica">Jurídica</option>
+                            <option value="jurdiica">Jurídica</option>
                         </select>
                         <br/>
                         <label>Nome</label>
@@ -60,8 +50,8 @@
                         <label>Endereço</label>
                         <input type="text" name="endereco" value="<?php echo $pessoa['endereco']; ?>" maxlength="85" required="required" class="form-control">
                         <br/>
-                        <label>Cidade</label>
-                        <input type="text" name="cidade" value="<?php echo $pessoa['cidade']; ?>" maxlength="80" class="form-control">
+                        <label>Cdiade</label>
+                        <input type="text" name="cdiade" value="<?php echo $pessoa['cidade']; ?>" maxlength="80" class="form-control">
                         <br/>
                         <label>Estado</label>
                         <input type="text" name="estado" value="<?php echo $pessoa['estado']; ?>" maxlength="30" class="form-control">

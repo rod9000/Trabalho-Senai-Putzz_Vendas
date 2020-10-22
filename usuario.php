@@ -12,7 +12,8 @@
     <head>
         <title>Cadastro de usuarios</title>
         <meta charset = "UTF-8"/>
-        <link rel="shortcut icon" href="imagens/icomush.ico" type="image/x-icon"/>
+        <link href="https://fonts.googleapis.com/css?family=Lexend+Exa&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="css/nav2.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     </head>
     <body>
@@ -20,22 +21,9 @@
         <br/><br/>
         </header>
         <nav>
-        <hr/>
-        <div class="col-xs-8 col-xs-offset-2">
-            <div class="col-xs-6 col-xs-offset-0">
             <?php
                 include("menu.php");
             ?>
-           </div>
-           <div class="col-xs-4 col-xs-offset-1">
-           <?php
-                echo "<span class='glyphicon glyphicon-user' aria-hidden='true'></span>";
-                echo $_SESSION["user"];
-                echo "<a href='sair.php' style='text-decoration: none; font-weight: bold;'>&nbsp;&nbsp;Sair</a>";
-            ?>
-            </div>
-        </div>
-        <br/>
         </nav>
         <section>
         <br/><br/>
@@ -82,7 +70,7 @@
                 echo "<td>".$usuario['nome']."</td>";
                 echo "<td>".$usuario['login']."</td>";
                 echo "<td>".$usuario['tipo']."</td>";
-                echo "<td><a href='editausuario.php?id=$id'><button type='submit' class='btn btn-success'>Editar</button></a>&nbsp;&nbsp;<a href='apagausuario.php?id=$id'><button type='submit' class='btn btn-danger'>Apagar</button></a></td>";
+                echo "<td><a href='editausuario.php?idusuarios=$id'><button type='submit' class='btn btn-success'>Editar</button></a>&nbsp;&nbsp;<a href='apagausuario.php?idpessoa=$id'><button type='submit' class='btn btn-danger'>Apagar</button></a></td>";
             echo "</tr>";
             }
             mysqli_close($conn);

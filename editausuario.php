@@ -3,7 +3,7 @@
     if($_SESSION["status"] !="OK"){
         header('location:index.php');
     }
-    if($_SESSION["tipo"] !="admin"){
+    if($_SESSION["tipo"] !=""){
         header('location:agenda.php');
     }
 ?>
@@ -13,6 +13,8 @@
         <title>Agenda 2.0</title>
         <meta charset = "UTF-8"/>
         <link rel="shortcut icon" href="imagens/icomush.ico" type="image/x-icon"/>
+        <link href="https://fonts.googleapis.com/css?family=Lexend+Exa&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="css/nav2.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     </head>
     <body>
@@ -21,29 +23,16 @@
         <br/><br/>
         </header>
         <nav>
-        <hr/>
-        <div class="col-xs-8 col-xs-offset-2">
-            <div class="col-xs-6 col-xs-offset-0">
             <?php
                 include("menu.php");
             ?>
-           </div>
-           <div class="col-xs-4 col-xs-offset-1">
-           <?php
-                echo "<span class='glyphicon glyphicon-user' aria-hidden='true'></span>";
-                echo $_SESSION["user"];
-                echo "<a href='sair.php' style='text-decoration: none; font-weight: bold;'>&nbsp;&nbsp;Sair</a>";
-            ?>
-            </div>
-        </div>
-        <br/>
         </nav>
         <section>
         <br/><br/>
         <?php
             include("conecta.php");
-            $id = $_GET['id'];
-            $sql2 = mysqli_query($conn, "SELECT * FROM usuario WHERE id='$id'") or die(mysqli_error($conn));
+            $id = $_GET['idpessoas'];
+            $sql2 = mysqli_query($conn, "SELECT * FROM usuarios WHERE idusuarios='$id'") or die(mysqli_error($conn));
             while($usuario = mysqli_fetch_array($sql2)){
         ?>
         <div style="width: 35%; float:left; padding-left:5%;">
@@ -79,7 +68,7 @@
         <?php
             include("conecta.php");
             echo "<h4>Usuários Cadastrados</h4>";
-            $sql = mysqli_query($conn, "SELECT * FROM usuario");
+            $sql = mysqli_query($conn, "SELECT * FROM usuarios");
             echo "<table class='table table-hover'>";
             echo "<tr>";
                 echo "<th>Nome</th>";

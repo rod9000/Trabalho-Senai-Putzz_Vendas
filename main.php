@@ -7,37 +7,24 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <meta charset = "UTF-8"/>
-        <link rel="shortcut icon" href="imagens/icomush.ico" type="images/icons/favicon.ico"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-    </head>
+            <meta charset = "UTF-8"/>
+            <link rel="shortcut icon" href="imagens/putzz.ico" type="image/x-icon"/>         
+            <link href="https://fonts.googleapis.com/css?family=Lexend+Exa&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="css/nav2.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        </head>
     <body>
         
         <header>          
         </header>
         <nav>
-            <div class="col-xs-8 col-xs-offset-2">
-                <div class="col-xs-6 col-xs-offset-0">
                     <?php
                         include("menu.php");
                     ?>
-                  
-                </div>
-                <div class="col-xs-4 col-xs-offset-1">
-                    <?php
-                    echo "<div style='position: fixed; left:10;  qwidth: 100%;  color: white; text-align: center;'>";
-                        echo "<span class='glyphicon glyphicon-user' style='color:white' aria-hidden='true'></span>";
-                        echo $_SESSION["user"];
-                        echo "<a href='sair.php' style='text-decoration: none;color:#20ff28; font-weight: bold;'>&nbsp;&nbsp;Sair</a>";
-                        echo "</div>";
-                    ?>
-                </div>
-            </div>
         </nav>
         <section>
             <br/><br/>
-        <div style="width: 30%; float:left; padding-left:2%; padding-right:2%">
+        <div style="width: 30%; float:left; padding-left:10%;padding-top:10%; padding-right:2%">
         <div class="panel panel-primary">
             <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;Dados do Sistema</h3></div>
                 <div class="panel-body">
@@ -72,9 +59,9 @@
                 </div>    
         </div>
         </div>
-        <div style="width: 30%; float:left; padding-left:2%; padding-right:2%">
+        <div style="width: 40%; float:right; padding-left:2%;padding-top:10%;  padding-right:15%">
         <div class="panel panel-primary">
-            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-king" aria-hidden="true"></span>&nbsp;Físicas / Jurídicas</h3></div>
+            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-king" aria-hidden="true"></span>&nbsp;Pedidos </h3></div>
                 <div class="panel-body">
                     <?php
                     include("conecta.php");
@@ -86,27 +73,7 @@
                     <?php mysqli_close($conn); ?>
                 </div>    
         </div>
-        </div>
-        <div style="width: 30%; float:left; padding-left:2%; padding-right:2%">
-        <div class="panel panel-primary">
-            <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-glass" aria-hidden="true"></span>&nbsp;Aniversariantes do Mês</h3></div>
-                <div class="panel-body">
-                    <?php
-                        include("conecta.php");
-                        $sql = mysqli_query($conn, "SELECT * from pessoas where month(datanascimento) = month(CURRENT_DATE())");
-                        while($aniversario = mysqli_fetch_array($sql)){
-                            $id = $aniversario['id'];
-                            echo "<a href='verpessoa.php?id=$id'>".$aniversario['nome']."</a>&nbsp;&nbsp;&nbsp;&nbsp;";
-                            $data = date_create($aniversario['datanascimento']);
-                            echo date_format($data, 'd/m/Y');
-                            echo "<br/>";
-                        }
-                        mysqli_close($conn);
-                    ?>
-                    <br/><br/>
-                </div>    
-        </div>
-        </div>
+        </div>  
             <br/><br/>
         </section>
         <footer>

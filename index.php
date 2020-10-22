@@ -3,9 +3,9 @@
     <head>
         <title>PutzzVendas</title>
         <meta charset = "UTF-8"/>
-        <link rel="shortcut icon" href="imagens/icomush.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" href="imagens/icomush.ico" type="images/icon.ico"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
     <body>
         <header>
             

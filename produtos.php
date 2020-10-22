@@ -7,34 +7,20 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Agenda 2.0</title>
+        <title>PRODUTOS</title>
         <meta charset = "UTF-8"/>
-        <link rel="shortcut icon" href="imagens/icomush.ico" type="image/x-icon"/>
+        <link rel="shortcut icon" href="imagens/putzz.ico" type="image/x-icon"/>
+        <link href="https://fonts.googleapis.com/css?family=Lexend+Exa&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="css/nav2.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
     <body>
         <header>
-        <div class="col-md-4 col-md-offset-4"><h3>Putzz vendas 2020</h3></div>
-        <br/><br/>
         </header>
         <nav>
-        <hr/>
-        <div class="col-xs-8 col-xs-offset-2">
-            <div class="col-xs-6 col-xs-offset-0">
             <?php
                 include("menu.php");
             ?>
-           </div>
-           <div class="col-xs-4 col-xs-offset-1">
-           <?php
-                echo "<span class='glyphicon glyphicon-user' aria-hidden='true'></span>";
-                echo $_SESSION["user"];
-                echo "<a href='sair.php' style='text-decoration: none; font-weight: bold;'>&nbsp;&nbsp;Sair</a>";
-            ?>
-            </div>
-        </div>
-        <br/>
         </nav>
         <section>
         <br/><br/>

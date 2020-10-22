@@ -465,9 +465,20 @@ iframe {
   }
 }
 
+
+
 .navbar {
   background-color: rgb(0, 0, 0);
   font-family: Arial;
+}
+/* Links inside the navbar */
+.navbar a {
+  overflow: hidden;
+  float: left;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  padding: 15px 16px;
+  text-decoration: none;
 }
 
 /* Style The Dropdown Button */
@@ -475,7 +486,7 @@ iframe {
   background-color: #20ff28;
   color: rgb(0, 0, 0);
   padding: 17px;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   cursor: pointer;
   border-right:1px solid #bbb;
@@ -492,15 +503,15 @@ iframe {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
+  min-width: 180px;
+  box-shadow: 0px 10px 16px 0px rgb(0, 0, 0);
   z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
   color: rgb(0, 0, 0);
-  padding: 12px 16px;
+  padding: 14px 16px;
   text-decoration: none;
   display: block;
 }
@@ -517,14 +528,7 @@ iframe {
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
-/* Links inside the navbar */
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: rgb(0, 0, 0);
-  padding: 15px 16px;
-  text-decoration: none;
-}
+
 
 .ref-btn{
   background-color: #20ff28;
@@ -535,12 +539,13 @@ iframe {
   cursor: pointer;
 }
 body {
-  background-color: rgb(255, 255, 255)
+  background-color: rgb(255, 255, 255);
+  
 }
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   
   background-color: #333;
 }

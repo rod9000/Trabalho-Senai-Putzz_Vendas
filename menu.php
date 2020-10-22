@@ -1,42 +1,75 @@
 
         <?php
-    $tipo =  $_SESSION["tipo"];
-    if($tipo === "admin"){
-        echo "<ul class='nav nav-pills'>";
-            echo "<li role='presentation'><a href='main.php'>HOME</a></li>";
-            echo "<li role='presentation'><a href='usuario.php'>USUÁRIO</a></li>";
-            echo "<li role='presentation'><a href='pessoa.php'>PESSOAS</a></li>";
-            echo "<li role='presentation'><a href='expessoa.php'>PESSOAS APAGADAS</a></li>";
-            echo "<li role='presentation'><a href='pedidos.php'>PEDIDOS</a></li>";
-            echo "<li role='presentation'><a href='produtos.php'>PRODUTOS</a></li>";
-            echo "<li role='presentation'><a href='cadprodutos.php'>CAD-PRODUTOS</a></li>";
-            
-        echo "</ul>";
-    }
-    else {   
-        echo "<div class='navbar'>";  
-        echo "<ul>";
-            echo "<li role='presentation'><a class='ref-btn' href='main.php'>HOME</a></li>";
-            echo "<li role='presentation'><a class='ref-btn' href='pedidos.php'>PEDIDOS</a></li>";            
-            echo "<div class='dropdown'>";
-            echo "<button class='dropbtn'>PESSOAS ";
-            echo "<i class='fa fa-caret-down'></i>";
-            echo "</button>";
-            echo "<div class='dropdown-content'>";
-            echo "<a href='pessoa.php'>Pessoas</a>";
-            echo "<a href='cadpessoa.php'>Cadastro de Pessoas</a>";           
-            echo "</div>";
-            echo "</div>";
-            echo "<div class='dropdown'>";
-            echo "<button class='dropbtn'>PRODUTOS";
-            echo "<i class='fa fa-caret-down'></i>";
-            echo "</button>";
-            echo "<div class='dropdown-content'>";
-            echo "<a href='produtos.php'>Produtos</a>";
-            echo "<a href='cadproduto.php'>Cadastro de Produtos</a>";           
-            echo "</div>";
-            echo "</div>";            
-        echo"</ul>";
-        echo "</div>";
-    }
-?>
+        session_start();
+        $tipo =  $_SESSION["tipo"];
+        if ($tipo === "admin") {
+          echo "<nav>";
+          echo "<ul>";
+          echo "<li><a href='main.php'>Home</a></li>";
+          echo "<li>";
+          echo "<a href='#0'>Pedidos</a>";
+          echo  "<ul>";
+          echo "<li><a href='pedidos.php'>pedidos</a></li>";
+          echo  "<li><a href='vendas.php'>Vendas</a></li>";
+          echo "</ul>";
+          echo "</li>";
+          echo "<li>";
+          echo "<a href='#0'>Pessoas</a>";
+          echo  "<ul>";
+          echo "<li><a href='pessoa.php'>pessoas</a></li>";
+          echo  "<li><a href='cadpessoa.php'>Cadastrar pessoas</a></li>";
+          echo "</ul>";
+          echo "</li>";
+          echo "<li>";
+          echo "<a href='#0'>Produtos</a>";
+          echo  "<ul>";
+          echo  "<li><a href='produtos.php'>Produtos</a></li>";
+          echo  "<li><a href='cadproduto.php'>Cadastro de Produtos</a></li>";
+          echo "</ul>";
+          echo "</li>";
+          echo  "<li><a href='#0'>Usuários</a>";
+          echo  "<ul>";
+          echo "<li><a>User:     " . $_SESSION['user'] . "</a></li>";
+          echo  "<li><a href='usuario.php'>Cadastro de Usuários</a></li>";
+          echo  "<li><a href='sair.php'>Sair</a></li>";
+          echo "</ul>";
+          echo "</li>";
+          echo "</ul>";
+          echo "</nav>";
+        } else {
+          echo "<nav>";
+          echo "<ul>";
+          echo "<li><a href='main.php'>Home</a></li>";
+          echo "<li>";
+          echo "<a href='#0'>Pedidos</a>";
+          echo  "<ul>";
+          echo "<li><a href='pedidos.php'>pedidos</a></li>";
+          echo  "<li><a href='vendas.php'>Vendas</a></li>";
+          echo "</ul>";
+          echo "</li>";
+          echo "<li>";
+          echo "<a href='#0'>Pessoas</a>";
+          echo  "<ul>";
+          echo "<li><a href='pessoa.php'>pessoas</a></li>";
+          echo  "<li><a href='cadpessoa.php'>Cadastrar pessoas</a></li>";
+          echo "</ul>";
+          echo "</li>";
+          echo "<li>";
+          echo "<a href='#0'>Produtos</a>";
+          echo  "<ul>";
+          echo  "<li><a href='produtos.php'>Produtos</a></li>";
+          echo  "<li><a href='cadproduto.php'>Cadastro de Produtos</a></li>";
+          echo "</ul>";
+          echo "</li>";
+          echo  "<li><a href='#0'>Usuários</a>";
+          echo  "<ul>";
+          echo "<li><a>User:     " . $_SESSION['user'] . "</a></li>";
+          echo  "<li><a href='usuario.php'>Cadastro de Usuários</a></li>";
+          echo  "<li><a href='sair.php'>Sair</a></li>";
+          echo "</ul>";
+          echo "</li>";
+          echo "</ul>";
+          echo "</nav>";
+        }
+        ?>
+  
