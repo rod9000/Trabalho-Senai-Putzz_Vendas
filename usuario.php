@@ -27,7 +27,7 @@
         </nav>
         <section>
         <br/><br/>
-        <div style="width: 35%; float:left; padding-left:5%;">
+        <div style="width: 35%; float:left;padding-top:5%; padding-left:5%;">
         <div class="panel panel-primary">
             <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Cadastro de Usuários</h3></div>
                 <div class="panel-body">
@@ -52,7 +52,7 @@
                 </div>    
         </div>
         </div>
-        <div style="width: 45%; float:right; padding-right:5%;">
+        <div style="width: 45%; float:right;padding-top:5%; padding-right:5%;">
         <?php
             include("conecta.php");
             echo "<h4>Usuários Cadastrados</h4>";

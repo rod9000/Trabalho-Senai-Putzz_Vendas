@@ -17,24 +17,35 @@
 <body>
   <nav>
     <?php
+    session_Start();
     include("menu.php");
     ?>
   </nav>
   <div style="padding-top:10%;">
   <div class="prod">
-    <label>Codigo</label>
-    <input type="text" name="endereco" value="<?php echo $codigo['codigo']; ?>" maxlength="85" required="required" class="form-control">
-    <br />
-    <label for="">Produto</label>
-    <select id="produto">
-      <option value="vendedor">$descricao</option>
-      <option value="cliente">Cliente</option>
-    </select>
+  <label for="">Produto</label>
+</br>
+    <?php
+    include("conecta.php");
+    $sql = mysqli_query($conn, "SELECT * FROM produtos ORDER BY descricao") or die(mysqli_error($conn));
+    echo "<select class='col-md-6 col-md-offset-4' id='produto'>";
+    while($produto = mysqli_fetch_array($sql)){     
+      echo "<option>".$produto['descricao']."</option>";
+    }
+    echo "</select>";
+    mysqli_close($conn);
+    ?>
+    
     <script>
       $(document).ready(function() {
         $('#produto').select2();
       });
     </script>
+    </br>
+    <label>Codigo</label>
+    <input type="text" name="codigo" value="<?php echo $codigo; ?>" maxlength="85" required="required" class="form-control">
+    <br />
+    
     </br>
     <label>Valor</label>
     <input type="text" name="valor" value="<?php echo $valor['valor']; ?>" maxlength="85" required="required" class="form-control">

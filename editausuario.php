@@ -3,14 +3,14 @@
     if($_SESSION["status"] !="OK"){
         header('location:index.php');
     }
-    if($_SESSION["tipo"] !=""){
-        header('location:agenda.php');
+    if($_SESSION["tipo"] !="vendedor"){
+        header('location:trab.php');
     }
 ?>
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Agenda 2.0</title>
+        <title>Putzz Vendas </title>
         <meta charset = "UTF-8"/>
         <link rel="shortcut icon" href="imagens/icomush.ico" type="image/x-icon"/>
         <link href="https://fonts.googleapis.com/css?family=Lexend+Exa&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
     </head>
     <body>
         <header>
-        <div class="col-md-4 col-md-offset-4"><h3>Agenda 2.0 - TDS - SENAI</h3></div>
+        <div class="col-md-4 col-md-offset-4"><h3>Putzz Vendas - surpreenda se</h3></div>
         <br/><br/>
         </header>
         <nav>
@@ -31,7 +31,7 @@
         <br/><br/>
         <?php
             include("conecta.php");
-            $id = $_GET['idpessoas'];
+            $id = $_GET['idusuarios'];
             $sql2 = mysqli_query($conn, "SELECT * FROM usuarios WHERE idusuarios='$id'") or die(mysqli_error($conn));
             while($usuario = mysqli_fetch_array($sql2)){
         ?>
@@ -78,10 +78,10 @@
             echo "</tr>";
             while($usuario = mysqli_fetch_array($sql)){
             echo "<tr>";
-                $id = $usuario['id'];
+                $id = $usuario['idusuarios'];
                 echo "<td>".$usuario['nome']."</td>";
                 echo "<td>".$usuario['login']."</td>";
-                echo "<td>".$usuario['tipo']."</td>";
+                echo "<td>".$usuario['tipousuarios']."</td>";
                 echo "<td><a href='editausuario.php?id=$id'><button type='submit' class='btn btn-success'>Editar</button></a>&nbsp;&nbsp;<a href='apagausuario.php?id=$id'><button type='submit' class='btn btn-danger'>Apagar</button></a></td>";
             echo "</tr>";
             }

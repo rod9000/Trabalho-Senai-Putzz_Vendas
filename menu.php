@@ -1,6 +1,5 @@
 
         <?php
-        session_start();
         $tipo =  $_SESSION["tipo"];
         if ($tipo === "admin") {
           echo "<nav>";
